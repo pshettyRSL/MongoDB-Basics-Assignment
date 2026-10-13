@@ -1,0 +1,6 @@
+Task 6 -
+
+mongodump --db company_advanced --archive=company.archive --gzip
+mongorestore --archive=company.archive --gzip \
+--nsFrom="company.*" \
+--nsTo="company_restore.*"
