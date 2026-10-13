@@ -64,10 +64,3 @@ db.employees
 db.createCollection("session")
 db.session.insert({_id: 1, userName: "John", expiresAt: new Date(Date.now() + 600000)})
 db.session.createIndex({ expiresAt: 1 },{ expireAfterSeconds: 60 })
-
-Task 6 -
-
-mongodump --db company_advanced --archive=company.archive --gzip
-mongorestore --archive=company.archive --gzip \
---nsFrom="company.*" \
---nsTo="company_restore.*"
